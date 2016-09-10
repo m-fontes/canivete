@@ -13,6 +13,11 @@ desc.setSmtpHost("SRVSMTP1.santander.com.br")
 desc.setUseSsl(false)
 desc.setSmtpPort("25")
 //desc.setCharset("[character set]")
-
 desc.save()
+
+sh "sed -r -i \"s|(^.*\\bversion\\b.*[0-9.]+)|&-SNAPSHOT-${env.BUILD_NUMBER}|\" endpoints/package.json"
+>> para considerar uma palavra exata no pipeline do Jenkins
+
+Jenkins.instance.getItemByFullName("docker-jenkins-slave-android-multibranch/master").updateNextBuildNumber(45)
+>> reset build number
 
