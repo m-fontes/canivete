@@ -1,0 +1,21 @@
+### Linux ###
+#############
+
+sed -r -i "s|(\"version\":.*[0-9.]+)|&-SNAPSHOT-35|" package.json
+>> reaproveitando a string encontrada para append de outra substring
+
+for img in $(ls *tar); do docker load -i $img; done
+>> executando um comando para todos os resultados do 'for'
+
+sh "echo \"docker stop \$(docker ps --format {{.Names}} | grep \"dev_nexus\" | head -1)\""
+>> no pipe do Jenkins
+
+date +%Y_%m_%d_%Hh_%Mmin_%Ss
+>> devolve horario no formato: YYYY_mm_dd_<horas>_<minutos>_<segundos>
+
+[ -f .npmrc ] && echo "cache=$(pwd)" >> .npmrc || echo "cache=$(pwd)" > .npmrc
+>> Executa o primeiro comando se o arquivo ja existe; executa segundo comando se o arquivo nao existe
+
+sudo chkconfig docker on
+>> para habilitar o servico do docker permanentemente ao iniciar a VM
+
