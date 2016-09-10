@@ -1,0 +1,19 @@
+### Git ### 
+############
+
+git push origin --delete feature/001
+>> deletando branch remoto
+
+git difftool dev_env hk_env Jenkinsfile
+>> comparing files from two different branches, "dev_env" and "hk_env"
+
+for remote in `git branch -r | grep -v master `; do git checkout --track $remote ; done
+>> loop para checkout de todos os branches. Depois disso, submeter todos para novo remote com "git push <novoremote> --all"
+
+git config --global http.sslVerify false
+git push origin --delete feature/DVPSBR-01
+git difftool feature/DVPSBR-04 develop -- .gitignore
+git difftool HEAD^ HEAD -- .gitignore
+git config --global difftool.prompt false
+
+
