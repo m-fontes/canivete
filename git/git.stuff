@@ -1,6 +1,8 @@
 ### Git ### 
 ############
 
+git config --global user.name "Mauricio Fontes Alexandre" && git config --global user.email "mfontes@ciandt.com"
+
 git push origin --delete feature/001
 >> deletando branch remoto
 
