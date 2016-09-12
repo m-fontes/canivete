@@ -18,6 +18,35 @@ desc.save()
 
 ===========================
 
+Manipulando arquivo texto (package.json) para mudar seu conteudo em tempo de build através do pipeline:
+
+	sh "cat endpoints/package.json | grep name -C 0"
+        sh "sed -r -i \"s|(^.*\\bname\\b.*[a-zA-Z_-]+)|&-backend|\" endpoints/package.json"
+        sh "cat endpoints/package.json | grep name -C 0"
+        
+        sh "cat endpoints/package.json | grep version -C 0"
+        sh "sed -r -i \"s|(^.*\\bversion\\b.*[0-9.]+)|&-SNAPSHOT-${env.BUILD_NUMBER}|\" endpoints/package.json"
+        sh "cat endpoints/package.json | grep version -C 0"
+        
+        sh "rm -f \$(find endpoints/ -type l)"
+        
+        sh "mkdir -p s2mb/endpoints/libs && cp -R endpoints/ s2mb/ && cp -R shared_libs/* s2mb/endpoints/libs"
+        sh "mkdir -p s2mb/jobs/libs && cp -R jobs/ s2mb/ && cp -R shared_libs/* s2mb/jobs/libs"
+        sh """echo -e \"{\\n\\t\\"name\\": \\"s2m\\",\\n\\t\\"version\\": \\"1.0.0-SNAPSHOT-21\\"\\n}\" > s2mb/package.json"""
+        sh "cat s2mb/package.json"
+        
+        sh """sed -ri \"s|(^.*\\bname\\b.*[a-zA-Z_-]+)|&-backend|\" s2mb/package.json"""
+        sh "cat s2mb/package.json"
+        
+        sh "ls -lah"
+        sh "echo \"email=jane@example.com\" > s2mb/.npmrc"
+        sh "echo \"always-auth=true\" >> s2mb/.npmrc"
+        sh "echo \"_auth=YWRtaW46YWRtaW4xMjM=\" >> s2mb/.npmrc"
+        sh "cat s2mb/.npmrc"
+        sh "cd s2mb/ && ls -lah && npm publish --registry http://webdvpdvlbr01:28082/repository/npm-snapshot/"
+
+============================
+
 sh "sed -r -i \"s|(^.*\\bversion\\b.*[0-9.]+)|&-SNAPSHOT-${env.BUILD_NUMBER}|\" endpoints/package.json"
 >> para considerar uma palavra exata no pipeline do Jenkins
 
