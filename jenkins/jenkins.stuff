@@ -1,6 +1,24 @@
 ### Jenkins ### 
 ##############
 
+=======================
+
+stage 'mailTo'
+        currentBuild.result = 'SUCCESS'
+        def mailMsg = "The quick brown fox jumps over the lazy dog"
+        
+        sh "git show --oneline -s | cut -d' ' -f1 > gitcommit"
+        def gitCommit = readFile('gitcommit').trim()
+        
+        sh "git show | grep Author | cut -d '<' -f2 | cut -d'>' -f1 > gitauthor"
+        def gitAuthor = readFile('gitauthor').trim()
+        
+        echo "\nCommit author email: '${gitAuthor}'\n"
+        
+        mail body: "Branch built: "+ buildBranch.substring(2) +"\n\nCommit built: ${gitCommit}\n\n${mailMsg}, and this is the current build status: ${currentBuild.result}\n\nPlease go to ${env.BUILD_URL}.",
+        subject: "Job '${env.JOB_NAME}' (${env.BUILD_NUMBER}) - testing Email config",
+        to: 'mfontes@ciandt.com'
+
 ==========================
 
 import jenkins.model.*
