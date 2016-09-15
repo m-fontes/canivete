@@ -34,6 +34,12 @@ desc.save()
 //desc.setReplyToAddress("[reply to email address]")
 //desc.setCharset("[character set]")
 
+import jenkins.model.* // Desnecessário?
+
+def jenkinsLocationConfiguration = JenkinsLocationConfiguration.get()
+jenkinsLocationConfiguration.setAdminAddress("DevOps Jenkins <donotreply@santander.com>")
+jenkinsLocationConfiguration.save()
+
 ===========================
 
 Manipulando arquivo texto (package.json) para mudar seu conteudo em tempo de build através do pipeline:
