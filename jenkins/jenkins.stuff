@@ -1,6 +1,30 @@
 ### Jenkins ### 
 ##############
 
+==============================
+
+import hudson.security.*
+import hudson.tasks.*
+import jenkins.model.*
+
+// Used by RoleBasedAuthorizationStrategy
+import com.michelin.cio.hudson.plugins.rolestrategy.RoleBasedAuthorizationStrategy
+import com.michelin.cio.hudson.plugins.rolestrategy.Role.*
+import hudson.security.Permission;
+import hudson.security.PermissionGroup;
+import org.acegisecurity.acls.sid.PrincipalSid;
+
+//def strategy = new RoleBasedAuthorizationStrategy();
+
+def currentJenkins = Jenkins.getInstance()
+//currentJenkins.getAuthorizationStrategy().getRoleMaps()
+//currentJenkins.getAuthorizationStrategy().getGroups()
+if(currentJenkins.getAuthorizationStrategy().getSIDs("globalRoles") == null ){
+  println "Vazio, cria o novo!"
+} else  {
+  println "Já tem coisa!"
+}
+
 =======================
 
 stage 'mailTo'
