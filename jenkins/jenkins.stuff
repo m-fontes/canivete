@@ -25,6 +25,8 @@ if(currentJenkins.getAuthorizationStrategy().getSIDs("globalRoles") == null ){
   println "Já tem coisa!"
 }
 
+// hudson.security.AuthorizationStrategy$Unsecured@13f19262
+
 =======================
 
 stage 'mailTo'
