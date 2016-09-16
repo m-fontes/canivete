@@ -1,6 +1,23 @@
 ### Jenkins ### 
 ##############
 
+===============================
+
+Role adminRole = createAdminRole();
+def curStrategy = inst.getAuthorizationStrategy()
+
+if(!(curStrategy instanceof RoleBasedAuthorizationStrategy)) {  // If "RoleBased" strategy is not being used, that is, first time this container is being executed
+    def final String GLOBAL  = "globalRoles";
+    def strategy = new RoleBasedAuthorizationStrategy()
+    strategy.addRole(GLOBAL, adminRole);
+    strategy.assignRole(GLOBAL, adminRole, ADMIN_USERNAME);
+    inst.setAuthorizationStrategy(strategy)
+    inst.save();
+    println("\nRole-based authorization strategy configured.\n")
+} else {
+    println("\nRole-based strategy is already being used.\n")
+}
+
 ==============================
 
 import hudson.security.*
