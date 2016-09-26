@@ -1,6 +1,9 @@
 ### Linux ###
 #############
 
+for i in $(find ../shared_libs/ -name "npm-shrinkwrap.json"); do sed -i "s|registry.npmjs.org|180.154.138.111:8081\/repository\/npm-all|g" $i; done
+for i in $(find ../shared_libs/ -name "npm-shrinkwrap.json"); do sed -i "s|https|http|g" $i; done
+
 sed -r -i "s|(\"version\":.*[0-9.]+)|&-SNAPSHOT-35|" package.json
 >> reaproveitando a string encontrada para append de outra substring
 
