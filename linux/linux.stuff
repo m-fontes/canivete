@@ -1,6 +1,11 @@
 ### Linux ###
 #############
 
+echo -e "Acquire::http::Proxy \"http://proxyapp.santanderbr.corp:80\";" > /etc/apt/apt.conf &&
+apt-get update &&
+apt-get install -y --force-yes --fix-missing vim
+>> instalando vim em sistemas Debian
+
 tar czf t.tgz --exclude "./init.groovy.d" .
 >> criando .tgz desconsiderando um dir
 
