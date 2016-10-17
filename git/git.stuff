@@ -1,6 +1,9 @@
 ### Git ### 
 ############
 
+git diff 71cde85..3827fd7 --name-only
+>> mostrando o diff entre os commits '' e ''. Usando '--name-only', filtramos somente o nome dos arquivos alterados, sem mostrar o diff propriamente dito.
+
 git config --global user.name "Mauricio Fontes Alexandre" && git config --global user.email "mfontes@ciandt.com"
 
 git push origin --delete feature/001
