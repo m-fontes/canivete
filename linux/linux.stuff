@@ -1,6 +1,9 @@
 ### Linux ###
 #############
 
+echo "alias 'll'='ls -Ghal'" >> ~/.bashrc && echo "alias '..'='cd ..'" >> ~/.bashrc && source ~/.bashrc
+>> setting useful aliases on current Bash RC file
+
 [ -d dsl-pipeline-java ] && rm -rf dsl-pipeline-java/* || mkdir dsl-pipeline-java
 >> um modo de criar diretorios de uma maneira "segura" num script.
 >> Verifica se o dir existe, se existir limpa seu conteudo; se nao existir, cria.
