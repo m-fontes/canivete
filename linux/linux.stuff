@@ -1,6 +1,10 @@
 ### Linux ###
 #############
 
+[ -d dsl-pipeline-java ] && rm -rf dsl-pipeline-java/* || mkdir dsl-pipeline-java
+>> um modo de criar diretorios de uma maneira "segura" num script.
+>> Verifica se o dir existe, se existir limpa seu conteudo; se nao existir, cria.
+
 echo -e "Acquire::http::Proxy \"http://proxyapp.santanderbr.corp:80\";" > /etc/apt/apt.conf &&
 apt-get update &&
 apt-get install -y --force-yes --fix-missing vim
