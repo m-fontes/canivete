@@ -1,6 +1,24 @@
 ### Jenkins ### 
 ##############
 
+
+===============================
+
+#! groovy
+
+runSonarqube("endpoints/node_modules");
+
+def runSonarqube(String path) {    
+    println "Path passado por parametro vale '$path'"
+  
+    if(path == null || path == "") {
+      path = "node_modules/"
+    }
+  
+  	println "Agora, Path vale '$path'"
+}
+
+
 ===============================
 
 Role adminRole = createAdminRole();
