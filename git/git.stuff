@@ -1,6 +1,9 @@
 ### Git ### 
 ############
 
+git log --graph --pretty=format:"%C(yellow)%h%Creset%C(cyan)%C(bold)%d%Creset %C(cyan)(%cr)%Creset %C(green)%ce%Creset %s"
+>> crazy Git Log format
+
 git diff 71cde85..3827fd7 --name-only
 >> mostrando o diff entre os commits '' e ''. Usando '--name-only', filtramos somente o nome dos arquivos alterados, sem mostrar o diff propriamente dito.
 
