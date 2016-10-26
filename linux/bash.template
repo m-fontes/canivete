@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# A template, some good practice suggestions for a Bash script
+
+# Validating input: passing arguments on specific order:
+
+NUM_ARGUMENTS=2;
+
+if [ "$#" != ${NUM_ARGUMENTS} ];
+then
+        echo -e "Please pass the following args:"
+        echo -e "\t1st -- FIRST"
+        echo -e "\t2nd -- SECOND"
+        echo -e "\nExample:\n\t$0 ARG1 ARG2"
+        echo "Exiting now."
+        exit 1
+fi
+
+# Getting current date to use as part of container name:
+#DATE=`date +%Y_%m_%d`
+
+# If the desired command was successful, let's give some status back to the shell:
+if [ "$?" == 0 ];
+then
+        echo -e "\n\n"
+        exit 0
+fi
