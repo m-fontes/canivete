@@ -1,4 +1,4 @@
-for i in $(docker images -q --filter dangling=true); do docker rmi $i; done
+for dangling_image in $(docker images -q --filter dangling=true); do docker rmi $dangling_image; done
 >> removendo todas as imagens dangling
 
 docker ps --format="{{.Image}} | {{.ID}} | {{.Names}} | {{.Ports}}"
