@@ -1,6 +1,36 @@
 ### Linux ###
 #############
 
+# Configurando acesso por par de chaves SSH:
+ssh-keygen -C "SPJEK01"
+(/Users/mfontes/.ssh/id_rsa):/Users/mfontes/.ssh/id_rsa_SPJEK01_srvdvpdvlbr04 
+
+>> para gerar uma chave que será usada no login pelo user "SPJEK01" e foi salva no caminho indicado acima
+
+ssh-copy-id -i id_rsa_SPJEK01_srvdvpdvlbr04 SPJEK01@srvdvpdvlbr04
+>> copiando a chave indicada pelo parâmetro '-i' para o host "srvdvpdvlbr04", user "SPJEK01"
+
+ssh -i /Users/mfontes/.ssh/id_rsa_SPJEK01_srvdvpdvlbr04 SPJEK01@srvdvpdvlbr04
+>> agora este login deve ocorrer com sucesso e sem necessidade de digitação de password.
+
+===================
+#!/bin/bash
+
+echo "Group 'docker' currently: "
+cat /etc/group | grep docker
+
+usermod -aG docker x183830
+usermod -aG docker x184701
+usermod -aG docker x185120
+usermod -aG docker x184702
+usermod -aG docker x117424
+usermod -aG docker SPJEK01
+
+echo -e "\nGroup 'docker' now, must have all users added"
+cat /etc/group | grep docker
+
+===================
+
 echo "alias 'll'='ls -Ghal'" >> ~/.bashrc && echo "alias '..'='cd ..'" >> ~/.bashrc && source ~/.bashrc
 >> setting useful aliases on current Bash RC file
 
