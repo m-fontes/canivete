@@ -1,6 +1,10 @@
 ### Linux ###
 #############
 
+read -n1 -r -p "Pressione 'y' para continuar..." INPUT
+echo -e "\nContinuou, digitando '${INPUT}'"
+>> pegando um input no shell.
+
 # Configurando acesso por par de chaves SSH:
 ssh-keygen -C "SPJEK01"
 (/Users/mfontes/.ssh/id_rsa):/Users/mfontes/.ssh/id_rsa_SPJEK01_srvdvpdvlbr04 
