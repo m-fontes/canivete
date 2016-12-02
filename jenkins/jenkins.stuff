@@ -3,6 +3,17 @@
 
 
 ===============================
+//Solucao usada no post-build Groovy Script para setar Unstable em caso de retorno Fail do sonarqube:
+// Esta eh a string que o Sonarqube retorna em caso de erro de execucao.
+// Se esta string estiver presente no log, setamos a build como Unstable:
+def stringBusca = "INFO: EXECUTION FAILURE"
+
+if(manager.logContains("${stringBusca}")) {
+   manager.listener.logger.println("Build Successful but Sonar Scanner returned an error - Marking build as Unstable");
+   manager.build.@result = hudson.model.Result.UNSTABLE;
+}
+
+===============================
 
 #! groovy
 
