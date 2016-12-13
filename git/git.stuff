@@ -1,6 +1,10 @@
 ### Git ### 
 ############
 
+git remote set-url origin https://brasil-gitlab.alm.gsnetcloud.corp/serenity-alm-brazil/jenkins-master.git
+>> para editar/alterar a URL do remote "origin"
+
+
 git filter-branch --tree-filter 'rm -rf <<FILES>>' HEAD
 >> este comando precisa ser executado do mesmo caminho que o .git está presente, ou seja, top of working tree.
 >> se for necessário remover algum arquivo dentro de um dir específico, lembrar de colocar o caminho relativo correto.
@@ -29,5 +33,4 @@ git push origin --delete feature/DVPSBR-01
 git difftool feature/DVPSBR-04 develop -- .gitignore
 git difftool HEAD^ HEAD -- .gitignore
 git config --global difftool.prompt false
-
 
