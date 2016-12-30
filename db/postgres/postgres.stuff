@@ -1,50 +1,14 @@
-Last login: Fri Dec 30 07:26:17 on ttys000
-MACCIT014402-103:shared_with_vm mfontes$ source ~/.bashrc
-
-MACCIT014402-103:shared_with_vm mfontes$ 
-MACCIT014402-103:shared_with_vm mfontes$ vim newsonar.sql 
-MACCIT014402-103:shared_with_vm mfontes$ 
-MACCIT014402-103:shared_with_vm mfontes$ 
-MACCIT014402-103:shared_with_vm mfontes$ vim ~/limpando_db
-MACCIT014402-103:shared_with_vm mfontes$ cd
-MACCIT014402-103:~ mfontes$ vim limpando_db 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+psql -h dbdvppvlbr02 -p 50008 -d sonardb -U sonar
+>> Conectando no DB:
+>>> Host == dbdvppvlbr02
+>>> Port == 50008
+>>> Database == sonardb
+>>> User == sonar
 
 select 'drop table if exists "' || tablename || '" cascade;' 
   from pg_tables
  where schemaname = 'public';
+>> Essas linhas vao gerar como output linhas contendo todos os "drop table if exists" de todas as tabelas do schema "public", como visto abaixo:
 
 ======================
 
@@ -86,3 +50,4 @@ drop table if exists "group_roles" cascade;
  drop table if exists "rules" cascade;
  drop table if exists "rules_parameters" cascade;
 
+======================
