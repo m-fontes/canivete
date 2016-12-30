@@ -51,3 +51,23 @@ drop table if exists "group_roles" cascade;
  drop table if exists "rules_parameters" cascade;
 
 ======================
+
+1. Criar conteúdo DB em txt:
+pg_dump -C -U sonar sonar -f newsonar.sql
+
+2. Entrar no arquivo e comentar linha de "CREATE DATABASE sonar .... "
+
+3. Se existir, dropar o db sonar:
+dropdb -U sonar sonar
+
+4. Criar o DB sonar vazio:
+createdb -U sonar sonar
+
+5. Popular o DB com o conteúdo do txt:
+psql -U sonar -f newsonar.sql sonar
+
+6. Reiniciar container do DB novo
+
+7. Startar container da aplicação Sonar apontando para novo DB
+
+>> procedimento para geracao e validacao de um dump de Postgres
