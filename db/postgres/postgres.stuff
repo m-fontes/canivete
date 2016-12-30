@@ -1,0 +1,88 @@
+Last login: Fri Dec 30 07:26:17 on ttys000
+MACCIT014402-103:shared_with_vm mfontes$ source ~/.bashrc
+
+MACCIT014402-103:shared_with_vm mfontes$ 
+MACCIT014402-103:shared_with_vm mfontes$ vim newsonar.sql 
+MACCIT014402-103:shared_with_vm mfontes$ 
+MACCIT014402-103:shared_with_vm mfontes$ 
+MACCIT014402-103:shared_with_vm mfontes$ vim ~/limpando_db
+MACCIT014402-103:shared_with_vm mfontes$ cd
+MACCIT014402-103:~ mfontes$ vim limpando_db 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+select 'drop table if exists "' || tablename || '" cascade;' 
+  from pg_tables
+ where schemaname = 'public';
+
+======================
+
+drop table if exists "group_roles" cascade;
+ drop table if exists "active_dashboards" cascade;
+ drop table if exists "active_rule_parameters" cascade;
+ drop table if exists "active_rules" cascade;
+ drop table if exists "activities" cascade;
+ drop table if exists "authors" cascade;
+ drop table if exists "ce_activity" cascade;
+ drop table if exists "ce_queue" cascade;
+ drop table if exists "dashboards" cascade;
+ drop table if exists "duplications_index" cascade;
+ drop table if exists "events" cascade;
+ drop table if exists "file_sources" cascade;
+ drop table if exists "groups" cascade;
+ drop table if exists "groups_users" cascade;
+ drop table if exists "issue_changes" cascade;
+ drop table if exists "issue_filter_favourites" cascade;
+ drop table if exists "issue_filters" cascade;
+ drop table if exists "issues" cascade;
+ drop table if exists "loaded_templates" cascade;
+ drop table if exists "manual_measures" cascade;
+ drop table if exists "measure_filter_favourites" cascade;
+ drop table if exists "measure_filters" cascade;
+ drop table if exists "metrics" cascade;
+ drop table if exists "notifications" cascade;
+ drop table if exists "perm_templates_groups" cascade;
+ drop table if exists "perm_templates_users" cascade;
+ drop table if exists "permission_templates" cascade;
+ drop table if exists "project_links" cascade;
+ drop table if exists "project_measures" cascade;
+ drop table if exists "project_qprofiles" cascade;
+ drop table if exists "projects" cascade;
+ drop table if exists "properties" cascade;
+ drop table if exists "quality_gate_conditions" cascade;
+ drop table if exists "quality_gates" cascade;
+ drop table if exists "resource_index" cascade;
+ drop table if exists "rules" cascade;
+ drop table if exists "rules_parameters" cascade;
+
