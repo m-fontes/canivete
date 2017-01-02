@@ -7,6 +7,9 @@ while read file; do echo "One file in the list: '$file'"; done < filename
 >> Substituindo um espaco em branco por newlines no arquivo. Logica obtida do site abaixo:
 >>> http://stackoverflow.com/questions/369758/how-to-trim-whitespace-from-a-bash-variable
 
+cat filestodeploy | sed "s| |\n|g"
+>> Mesma substituicao acima, mas sem alterar o arquivo.
+
 wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/7u79-b15/jdk-7u79-linux-x64.rpm
 rpm -i jdk-7u79-linux-x64.rpm
 >> instalando um JDK via rpm. Lembrar de rm o link simbólico "jexec" se houver erro.
