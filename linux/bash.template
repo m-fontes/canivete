@@ -6,7 +6,7 @@
 
 NUM_ARGUMENTS=2;
 
-if [ "$#" != ${NUM_ARGUMENTS} ];
+if [ "$#" -ne "${NUM_ARGUMENTS}" ];
 then
         echo -e "Please pass the following args:"
         echo -e "\t1st -- FIRST"
@@ -20,7 +20,7 @@ fi
 #DATE=`date +%Y_%m_%d`
 
 # If the desired command was successful, let's give some status back to the shell:
-if [ "$?" == 0 ];
+if [ "$?" -ne 0 ];
 then
         echo -e "\n\n"
         exit 0
