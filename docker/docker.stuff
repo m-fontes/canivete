@@ -1,3 +1,8 @@
+docker run -it --privileged --pid=host debian nsenter -t 1 -m -u -n -i sh
+>> logando na VM que roda o Docker Daemon no Mac
+
+=====
+
 for dangling_image in $(docker images -q --filter dangling=true); do docker rmi $dangling_image; done
 >> removendo todas as imagens dangling
 
