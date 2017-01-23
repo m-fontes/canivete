@@ -1,6 +1,11 @@
 ### Linux ###
 #############
 
+vim /etc/hosts
+>> para setar manualmente a resolucao de hosts
+
+=====
+
 sed -i "s|[[:space:]]|\n|" filename
 
 while read file; do echo "One file in the list: '$file'"; done < filename
