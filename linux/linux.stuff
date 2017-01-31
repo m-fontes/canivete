@@ -1,6 +1,11 @@
 ### Linux ###
 #############
 
+grep -rnw '/var/jenkins_home/jobs/' -e ".*<url>.*.git</url>$" | tee repos.log
+>> procurar pela regex ".*<url>.*.git</url>$" no caminho indicado, e jogando o output tanto pro stdout quanto para repos.log.
+
+=====
+
 vim /etc/hosts
 >> para setar manualmente a resolucao de hosts
 
