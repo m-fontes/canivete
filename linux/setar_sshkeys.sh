@@ -25,6 +25,8 @@ while getopts ":a:hu:t:" opt; do
 			;;
 		\?)
 			echo "Invalid option: '-$OPTARG'"
+			usage
+			exit 0
 			;;
 	esac
 done
