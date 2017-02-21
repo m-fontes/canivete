@@ -1,3 +1,6 @@
+pg_dump -C -h dbdvppvlbr02 -p 50008 -U sonar sonardb -f sonar_dump_2017_fev_02.sql
+>> gerando dump a partir do meu proprio host
+
 psql -h dbdvppvlbr02 -p 50008 -d sonardb -U sonar
 >> Conectando no DB:
 >>> Host == dbdvppvlbr02
