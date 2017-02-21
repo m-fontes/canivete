@@ -1,6 +1,11 @@
 ### Linux ###
 #############
 
+>> Comando para buildar um job remotamente. O formato do comando eh: 
+>>> http://<user>:<token do user, gerado pelo Jenkins>@<Jenkins URL>/job/<nome do job>/<[build] | [buildWithParameters]>
+
+===============================
+
 grep -rnw '/var/jenkins_home/jobs/' -e ".*<url>.*.git</url>$" | tee repos.log
 >> procurar pela regex ".*<url>.*.git</url>$" no caminho indicado, e jogando o output tanto pro stdout quanto para repos.log.
 
