@@ -1,6 +1,12 @@
 ### Linux ###
 #############
 
+grep -rnw . -e ".*jobId.*[\w-]*:[\w-]*.*" --include="config.xml"
+
+>> Procurando recursivamente pela RegEx indicada somente nos arquivos "config.xml"
+
+===============================
+
 curl -I -H 'If-None-Match: "0c50674916c85f87e9f3b54c7a85b475"' https://conteudo.imguol.com.br/c/entretenimento/2a/2017/01/07/honda-riding-assist-conceito-de-moto-que-se-equilibra-sozinha-1483817232444_v2_900x506.jpg 2> /dev/null | head -1 | cut -d' ' -f2
 >> passando um ETag e salvando o retorno HTTP dele; 304 quer dizer que nao mudou
 
