@@ -1,6 +1,16 @@
 ### Linux ###
 #############
 
+===============================
+
+json=$(curl -ks -X GET $sendpoint)
+if [[ "$json" == $(echo -e "{\n}") ]];
+then
+    echo "[ERRO] JSON vazio/invalido. Verifique se a bsrURI informada esta correta."
+	  exit 4
+fi
+>> exemplo de código que valida presença de newline (\n) no meio da string/variável a ser comparada: solução é usar um echo -e num subshell
+
 grep -rnw . -e ".*jobId.*[\w-]*:[\w-]*.*" --include="config.xml"
 
 >> Procurando recursivamente pela RegEx indicada somente nos arquivos "config.xml"
