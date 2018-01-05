@@ -1,6 +1,9 @@
 ### Git ### 
 ############
 
+GIT_SSH_COMMAND="ssh -i ~/.ssh/caminhodachaveprivada" git clone git@bitbucket.org:grupoerepopathcompleto
+>> informando uma chave SSH especifica para o git que difere da padrao (id_rsa)
+
 git checkout --patch master Dockerfile
 >> um merge especfico do arquivo em que cada diff/chunk é analisado individualmente para decidirmos se entra ou nao
 
