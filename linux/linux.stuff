@@ -3,6 +3,11 @@
 
 ===============================
 
+curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//'
+>> determinando Ip externo de uma VM
+
+===============================
+
 json=$(curl -ks -X GET $sendpoint)
 if [[ "$json" == $(echo -e "{\n}") ]];
 then
